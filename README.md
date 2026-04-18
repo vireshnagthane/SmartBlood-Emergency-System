@@ -1,18 +1,15 @@
-# 🩸 Hospital Blood Donor Management System
+# 🩸 SmartBlood Emergency Response System
 
 ## About the Project
 
-The Hospital Blood Donor Management System is a DBMS-based web application developed to support hospitals in emergency situations by providing quick access to blood donor information. Public users can register themselves as donors, and hospital administrators can log in to search donors based on city and blood group.
+SmartBlood is an advanced DBMS-based web application developed to bridge the critical gap between hospitals facing emergencies and active blood donors. Moving beyond a traditional static directory, this platform introduces an intelligent, location-aware matching engine to reduce response times during life-threatening situations. 
 
-This project includes the complete integration of:
-- **Frontend** for user interface design
-- **Backend** for application logic and form handling
-- **Database** for storing and retrieving donor and hospital data
+This project integrates complex mathematical logic directly into the database query engine:
+- **Spatial Calculations:** Implements the Haversine formula in MySQL to calculate real physical distances between hospitals and donors.
+- **Dynamic Ranking Algorithm:** Ranks perfectly-matched donors based on a combined Proximity Score and Recency Score (activity tracking).
+- **Automated Health Checks:** Strictly enforces a 90-day safe-interval rule for donors before they can be matched again.
 
-
-This project reflects practical implementation of database concepts in a real-world web application.
-
-## 🔗 Live Demo
+## 🔗 Repository
 
 💻 **GitHub Repository:** [View Source Code](https://github.com/vireshnagthane/SmartBlood-Emergency-System)
 
@@ -20,63 +17,53 @@ This project reflects practical implementation of database concepts in a real-wo
 
 ## 📌 Project Overview
 
-The **Hospital Blood Donor Management System** is designed to simplify donor management for hospitals.  
-It provides an easy interface for donor registration and allows hospitals to search available donors based on required details.
-
-This project is useful in emergency cases where hospitals need blood donors quickly and accurately.
+Traditional donor systems require administrators to manually scroll through lists of offline donors based on city text strings. **SmartBlood** revolutionizes this by allowing hospitals to trigger an **"Emergency Blast"**. The system instantly scans the database, executes the Haversine distance calculations, ignores donors on cooldown, and produces a highly targeted top-match list with simulated live SMS pings.
 
 ---
 
 
-## ✨ Features
+## ✨ Key Features
 
-- Donor registration system
-- Hospital admin login
-- Search donors by city
-- Filter donors by blood group
-- Clean and simple user interface
-- Connected with MySQL database
-- Live deployed project
+- **Location-Based Matchmaking:** MySQL Haversine distance formula tracking.
+- **Urgency Matrix:** Requests classified by Low, Medium, and High (Life-Threatening) urgencies.
+- **Live Emergency Tickers:** Real-time UI updates broadcasting high-urgency alerts publicly.
+- **Donor Availability Toggles:** Users actively control their emergency "online" status.
+- **Advanced Dashboard Tools:** Complete control room for hospital administrators.
+- **Enterprise Security:** Password hashing and parameterized MySQLi queries protecting data.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** PHP
-- **Database:** MySQL
-- **Server:** XAMPP / InfinityFree
+- **Frontend:** HTML5, Vanilla CSS, Bootstrap 5, Vanilla JavaScript
+- **Backend Logic:** PHP 8 with session management
+- **Database:** Relational MySQL (utilizing Spatial & Mathematical operations)
 - **Version Control:** GitHub
 
 ---
 
 ## Project Structure
 
-rewa_hospital/
+Sai_hosptal/
 │
-├── index.html
-├── signup.php
-├── login.php
-├── dashboard.php
+├── screenshots/
+├── database.sql
 ├── db.php
-├── css/
-├── js/
-└── images/
+├── style.css
+├── script.js
+├── index.php
+├── login.php
+├── signup.php
+├── dashboard.php
+├── request_blood.php
+├── emergency_search.php
+├── hospital_register.php
+├── donor_login.php
+├── donor_register.php
+├── donor_profile.php
+└── logout.php
 
 
-## Screenshots
-
-### Home Page
-![Home](rewa_hospital/screenshots/home-page.png)
-
-### Donor Registration
-![Donor](rewa_hospital/screenshots/donor-registration.png)
-
-### Login Page
-![Login](rewa_hospital/screenshots/login-page.png)
-
-### Dashboard
-![Dashboard](rewa_hospital/screenshots/dashboard.png)
 
 
 ## What I Learned
@@ -92,4 +79,4 @@ Through this project, I learned:
 ## Author
 Viresh Nagthane  
 B.Tech CSE  
-Rewa Engineering College
+Sanjivani College of Engineering
