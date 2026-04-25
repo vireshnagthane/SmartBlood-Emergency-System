@@ -257,3 +257,75 @@ h1, h2, h3, h4, h5, h6 {
 .dark-mode-toggle:hover {
     color: var(--primary-color);
 }
+
+/* --- Redesigned Frontend Styles --- */
+.redesigned-body {
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.text-dark-blue {
+    color: #0b132b;
+}
+
+.nav-hover {
+    transition: color 0.2s ease-in-out;
+}
+.nav-hover:hover {
+    color: #e63946 !important;
+}
+
+.hero-redesigned {
+    background: radial-gradient(circle at 50% 0%, #fff0f1 0%, #ffffff 70%);
+}
+
+.hero-btn {
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.hero-btn-outline {
+    border-radius: 6px;
+    color: #495057;
+    font-weight: 600;
+    transition: all 0.2s;
+    border-color: #dee2e6;
+}
+.hero-btn-outline:hover {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.border-start-md {
+    border-left: 1px solid #eaeaea;
+}
+
+@media (max-width: 768px) {
+    .border-start-md {
+        border-left: none;
+        border-top: 1px solid #eaeaea;
+        padding-top: 15px;
+    }
+    .stats-row .row {
+        gap: 0 !important;
+    }
+}
+
+.border-subtle {
+    border: 1px solid #e9ecef;
+}
+
+.shadow-sm-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.shadow-sm-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.08)!important;
+}
+
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

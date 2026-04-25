@@ -1,9 +1,6 @@
 -- Create Database
 CREATE DATABASE IF NOT EXISTS sai_hospital_db;
 USE sai_hospital_db;
--- Create Database
-CREATE DATABASE IF NOT EXISTS sai_hospital_db;
-USE sai_hospital_db;
 
 -- 1. Hospitals Table (Replacing Admin logic with general hospitals logic)
 CREATE TABLE IF NOT EXISTS hospitals (
@@ -61,14 +58,17 @@ CREATE INDEX idx_is_available ON donors(is_available);
 
 -- Insert Mock Data
 INSERT IGNORE INTO hospitals (id, name, username, password, city, address) VALUES
-(1, 'Sai Hospital', 'admin', 'password123', 'Sai', 'Main Road, Sai');
+(1, 'Sai Hospital', 'admin', 'password123', 'Sai', 'Main Road, Sai'),
+(2, 'City Care Hospital', 'cityadmin', 'password123', 'Sai', 'South Street, Sai');
 
 INSERT IGNORE INTO blood_inventory (hospital_id, blood_group, units_available) VALUES
-(1, 'A+', 10), (1, 'B+', 5), (1, 'O+', 2), (1, 'AB+', 8);
+(1, 'A+', 15), (1, 'B+', 8), (1, 'O+', 4), (1, 'AB+', 10),
+(2, 'A-', 2), (2, 'O-', 1), (2, 'O+', 12);
 
-INSERT IGNORE INTO donors (id, name, mobile, password, city, blood_group, is_available, last_donation_date) VALUES
-(1, 'Amit Sharma', '9876543210', 'donor123', 'Sai', 'O+', 1, '2023-01-01'),
-(2, 'Rohit Singh', '9876543211', 'donor123', 'Sai', 'A+', 1, '2022-12-15'),
-(3, 'Priya Patel', '9876543212', 'donor123', 'Sai', 'O+', 0, '2026-03-01'); -- Recently donated
-
-
+INSERT IGNORE INTO donors (id, name, mobile, password, city, blood_group, latitude, longitude, is_available, last_donation_date) VALUES
+(1, 'Amit Sharma', '9876543210', 'donor123', 'Sai', 'O+', 24.5310, 81.3010, 1, '2023-01-01'), -- Extremely close (0.1km)
+(2, 'Rohit Singh', '9876543211', 'donor123', 'Sai', 'A+', 24.5500, 81.3200, 1, '2022-12-15'), -- Further away (3km)
+(3, 'Priya Patel', '9876543212', 'donor123', 'Sai', 'O+', 24.5305, 81.3005, 0, '2026-03-01'), -- Blocked (Recently donated)
+(4, 'Vikram Verma', '9876543213', 'donor123', 'Sai', 'O+', 24.5800, 81.3500, 1, '2021-05-20'), -- Far away (7km)
+(5, 'Neha Gupta', '9876543214', 'donor123', 'Sai', 'B+', 24.5350, 81.3050, 1, NULL),       -- Very close
+(6, 'Rahul Dev', '9876543215', 'donor123', 'Sai', 'O+', 24.6300, 81.4000, 1, '2023-11-10'); -- Farthest match (14km)
